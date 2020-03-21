@@ -4,7 +4,7 @@ export const colors = {
   primary: config.themeColor,
   lightPrimary: "#FCF6EF",
   secondary: config.backgroundColor,
-  dullWhite: "#f1efef",
+  offWhite: "#f9f9f9",
   white: "#ffffff",
   dark: "#000000",
   paleBlue: "#1b3d66",
