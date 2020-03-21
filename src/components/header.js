@@ -1,8 +1,8 @@
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { colors } from "./styles/styles"
-
+import { DefaultButton, OutlineButton } from "./button"
 function Header({ siteTitle }) {
   const [topClass, setTopClass] = useState("")
 
@@ -81,15 +81,15 @@ function Header({ siteTitle }) {
           </ul>
           <ul className="navbar-nav ml-auto navbar-right">
             <li className="nav-item">
-              <button type="button" className="btn px-4 bgPrimaryButtonOutline">
-                Login
-              </button>
+              <OutlineButton text="Login" color="primary" padding="7px 27px" />
             </li>
             &nbsp; &nbsp;
             <li className="nav-item">
-              <button type="button" className="btn px-4 bgPrimaryButton">
-                Sign Up
-              </button>
+              <DefaultButton
+                text="Sign Up"
+                color="primary"
+                padding="7px 27px"
+              />
             </li>
           </ul>
         </div>
@@ -122,8 +122,8 @@ function Header({ siteTitle }) {
         }
 
         .navbar.past-main {
-          padding-top: 12px;
-          padding-bottom: 12px;
+          padding-top: 15px;
+          padding-bottom: 15px;
           background-color: rgba(255, 255, 255, 0.99) !important;
           -webkit-box-shadow: 0 2px 3px 0 rgba(96, 96, 96, 0.1);
           -moz-box-shadow: 0 2px 3px 0 rgba(96, 96, 96, 0.1);
