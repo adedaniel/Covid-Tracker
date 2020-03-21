@@ -14,7 +14,7 @@ module.exports = {
     google: "https://plus.google.com/u/0/+IsmailSmakoshGhallou",
   },
   googleAnalyticsID: "UA-88875900-4",
-  themeColor: "#6b63ff",
+  themeColor: "#65b77a",
   backgroundColor: "#6b63ff",
   social: {
     facebook: "appId",
