@@ -1,8 +1,8 @@
 module.exports = {
   defaultTitle: "See Jobs",
-  logo: "https://portfolio.smakosh.com/favicon/favicon-512.png",
+  logo: "../images/see-jobs-logo.png",
   author: "adedaniel & jaywonder20",
-  url: "https://portfolio.smakosh.com",
+  url: "https://seejobs.com",
   legalName: "See Jobs",
   defaultDescription: "Job Finder App.",
   socialLinks: {

@@ -1,8 +1,9 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { colors } from "./styles/styles"
 import { DefaultButton, OutlineButton } from "./button"
+import LogoImage from "./ImageExports/LogoImage"
+/* eslint jsx-a11y/anchor-is-valid: 0 */
 function Header({ siteTitle }) {
   const [topClass, setTopClass] = useState("")
 
@@ -11,7 +12,6 @@ function Header({ siteTitle }) {
       let activeClass = "past-main"
       if (window.scrollY === 0) {
         activeClass = ""
-        console.log("past-main")
       }
       setTopClass(activeClass)
     })
@@ -48,7 +48,13 @@ function Header({ siteTitle }) {
     >
       <div className="container container-s">
         <a className="navbar-brand" href="#">
-          <h4 className="m-0 logo">{siteTitle}</h4>
+          <h4 className="m-0 logo">
+            <span className="d-inline-block">
+              <LogoImage />
+            </span>
+            &nbsp;
+            <span>{siteTitle}</span>
+          </h4>
         </a>
         <button
           className="navbar-toggler"

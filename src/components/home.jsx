@@ -1,64 +1,86 @@
 import React from "react"
 import { Link } from "gatsby"
-import Image from "./image"
+import NeedJobImageBackground from "./ImageExports/NeedJobimageBackground"
 import { colors } from "./styles/styles"
 import Typed from "react-typed"
 
 import { DefaultButton } from "./button"
+import FutureImage from "./ImageExports/FutureImage"
+import LookingOutImage from "./ImageExports/LookingOutimage"
+import ListImage from "./ImageExports/ListImage"
+import SpreadImage from "./ImageExports/SpreadImage"
+import PersonalizedImage from "./ImageExports/PersonalizedImage"
+import ResultsImage from "./ImageExports/ResultsImage"
+import RelevanceImage from "./ImageExports/RelevanceImage"
+import NotificationImage from "./ImageExports/NotificationImage"
+import TimeImage from "./ImageExports/TimeImage"
+import AccessibleImage from "./ImageExports/AccessibleImage"
+import WatchingImage from "./ImageExports/WatchingImage"
+import TestedImage from "./ImageExports/TestedImage"
+import ChillImage from "./ImageExports/ChillImage"
 
 export default function Home() {
   return (
     <div>
-      <div className="container">
-        <div className="row vh100">
-          <div className="col-md-6 captionParent h90">
-            <div className="captionArea responsiveCenter">
-              <h1 className="bigText">Need a Job? Relax</h1>
-
-              <h2 className="mb-5">
-                Let us handle the <span className="break"></span>
-                <span className="hoverEffect smallerText">
-                  <Typed
-                    strings={[
-                      "search",
-                      "analysis",
-                      "personalization",
-                      "job^3000",
-                    ]}
-                    typeSpeed={40}
-                    backSpeed={40}
-                    backDelay={2000}
-                    smartBackspace={true}
-                    loop={true}
-                  />
-                </span>
-              </h2>
-              <Link to="/signup">
-                <DefaultButton
-                  color="primary"
-                  padding="13px 15px"
-                  width="75%"
-                  font="larger"
-                >
-                  Get Started
-                  <span className="mdi mdi-chevron-right"></span>
-                </DefaultButton>
-              </Link>
-            </div>
-          </div>
-          <div className="col-md-6 "></div>
-          <div className="text-center w-100">
-            <div className="animated infinite bounce slow">
-              <i className="fa fa-angle-down angles" aria-hidden="true"></i>
+      <NeedJobImageBackground>
+        <div className="setResponse h90">
+          <div className="container">
+            <div className="row vh100">
+              <div className="col-md-6 captionParent h90">
+                <div className="captionArea responsiveCenter">
+                  <h1 className="bigText">Need a Job? Relax</h1>
+                  <h2 className="mb-5">
+                    Let us handle the <span className="break"></span>
+                    <span className="hoverEffect smallerText">
+                      <Typed
+                        strings={[
+                          "search",
+                          "analysis",
+                          "personalization",
+                          "job^3000",
+                        ]}
+                        typeSpeed={40}
+                        backSpeed={40}
+                        backDelay={2000}
+                        smartBackspace={true}
+                        loop={true}
+                      />
+                    </span>
+                  </h2>
+                  <Link to="/signup">
+                    <DefaultButton
+                      color="primary"
+                      padding="13px 15px"
+                      width="75%"
+                      font="larger"
+                    >
+                      Get Started
+                      <span className="mdi mdi-chevron-right"></span>
+                    </DefaultButton>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-6 bgSpace captionParent h90 p-0">
+               
+              </div>
+              <div className="text-center w-100">
+                <div className="animated infinite bounce slow">
+                  <i className="fa fa-angle-down angles" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </NeedJobImageBackground>
+
       <div className="py-5 bgLight">
         <div className="container">
           <div className="row">
-            <div className="col-md-6"></div>
-            <div className="col-md-6 captionParent h-100">
+            <div className="col-md-6 ">
+              
+                <FutureImage />
+            </div>
+            <div className="col-md-6 captionParent hImage">
               <div className="captionArea">
                 <h1 className="colorPrimary">Okay, We Know...</h1>
                 <h5>
@@ -83,7 +105,7 @@ export default function Home() {
       <div className="py-4 bgLight">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 captionParent h-100">
+            <div className="col-md-6 captionParent hImage">
               <div className="captionArea">
                 <h1 className="colorPrimary">We're looking out for you</h1>
                 <h5>
@@ -96,7 +118,9 @@ export default function Home() {
                 </h5>
               </div>
             </div>
-            <div className="col-md-6"></div>
+            <div className="col-md-6">
+            <LookingOutImage/>
+            </div>
           </div>
         </div>
       </div>
@@ -105,24 +129,31 @@ export default function Home() {
           <h1 className="hoverEffect d-inline ">What We Do</h1>
           <div className="row mt-5">
             <div className="col-sm-2">
-              <p> Get your preference list</p>
+            <ListImage/>
+              <p> Get your job preferences</p>
             </div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
 
             <div className="col-sm-2">
+            <SpreadImage/>
               <p>Spread out</p>
             </div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
 
-            <div className="col-sm-2">Cook the findings to your taste</div>
+            <div className="col-sm-2">
+            
+            <PersonalizedImage/>
+            <p> Personalize the findings to your taste</p></div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
-            <div className="col-sm-2">Dish out exactly what you need</div>
+            <div className="col-sm-2">
+            <ResultsImage/>
+            <p> Dish out exactly what you need</p></div>
           </div>
         </div>
       </div>
@@ -131,10 +162,12 @@ export default function Home() {
           <h1>We're everywhere, everytime...</h1>
           <div className="row">
             <div className="col-md-4 my-3">
+<RelevanceImage/>
               <h4>Relevant</h4>
-              <p>Always see jobs perfect for you</p>
+              <p>Engineered to always find jobs perfect for you</p>
             </div>
             <div className="col-md-4 my-3">
+            <TimeImage/>
               <h4>Timely</h4>
               <p>
                 Real-time job updates so you can grab every opportunity on the
@@ -142,18 +175,22 @@ export default function Home() {
               </p>
             </div>
             <div className="col-md-4 my-3">
+            <NotificationImage/>
               <h4>Informing</h4>
-              <p>So you're the first person to get there</p>
+              <p>So you're always the first to get there</p>
             </div>
             <div className="col-md-4 my-3">
+            <AccessibleImage/>
               <h4>Accessible</h4>
               <p>So you can use it anywhere and anytime</p>
             </div>
             <div className="col-md-4 my-3">
+            <WatchingImage/>
               <h4>Present</h4>
               <p>We're watching everywhere so you don't miss a thing</p>
             </div>
             <div className="col-md-4 my-3">
+            <TestedImage/>
               <h4>Detailed</h4>
               <p>Designed from spacebar to spacebar, with you in mind</p>
             </div>
@@ -163,8 +200,10 @@ export default function Home() {
       <div className="py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-6"></div>
-            <div className="col-md-6 captionParent h-100">
+            <div className="col-md-6">
+            <ChillImage/>
+            </div>
+            <div className="col-md-6 hImage captionParent">
               <div className="captionArea">
                 <h1 className="colorPrimary">See?</h1>
                 <h5>
@@ -177,10 +216,10 @@ export default function Home() {
           </div>
           <div className="text-center my-5">
             <h2>
-              We <span className="hoverEffect"> See Jobs</span>
+              We <span className="hoverEffect"><strong> See Jobs</strong></span>
             </h2>
             <p className="mt-3">
-              and you should have clicked that button by now... 😉
+              and you should have clicked that button by now... <span role="img" aria-label="wink">😉</span> 
             </p>
             <Link to="/signup">
               <DefaultButton
@@ -197,6 +236,9 @@ export default function Home() {
       </div>
 
       <style jsx>{`
+      .hImage{
+          height: 370px
+      }
         .bigText {
           font-weight: 600;
           font-size: -webkit-xxx-large;
@@ -205,7 +247,7 @@ export default function Home() {
         .line {
           width: 100%;
           height: 5px;
-          margin: 30px 0;
+          margin: 60px 0;
           border-radius: 5px;
           background: #70c185;
         }
@@ -279,6 +321,18 @@ export default function Home() {
         @media (max-width: 539px) {
           .break {
             display: block;
+          }
+
+          .setResponse {
+            background-color: white;
+          }
+        }
+        @media (max-width: 767px) {
+          .setResponse {
+            background-color: white;
+          }
+          .bgSpace{
+              display:none
           }
         }
       `}</style>
