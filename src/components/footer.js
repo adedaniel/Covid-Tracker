@@ -1,6 +1,6 @@
 import React from "react"
 import { colors } from "./styles/styles"
-
+/* eslint jsx-a11y/anchor-is-valid: 0 */
 export default function Footer({ siteTitle }) {
   return (
     <footer className="bgPrimary">
@@ -104,14 +104,19 @@ export default function Footer({ siteTitle }) {
             </ul>
           </div>
 
-          <p className="text-center text-white mt-5 aRR">
+          <p className="text-center text-white mt-5 mb-3 aRR">
             © {new Date().getFullYear()}, {siteTitle} | All Rights Reserved.
           </p>
         </div>
       </div>
       <style jsx>{`
         .fitContent {
-          width: fit-content !important;
+          width: fit-content;
+        }
+        @media (max-width: 767px) {
+          .fitContent {
+            width: 49%;
+          }
         }
         .colorPrimary {
           color: ${colors.primary};
