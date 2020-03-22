@@ -85,11 +85,11 @@ function Header({ siteTitle }) {
               </a>
             </li>
           </ul>
-          <ul className="navbar-nav ml-auto navbar-right">
+          <ul className="navbar-nav ml-auto flex navbar-right">
             <li className="nav-item">
               <OutlineButton text="Login" color="primary" padding="7px 27px" />
             </li>
-            &nbsp; &nbsp;
+            &nbsp;&nbsp;
             <li className="nav-item">
               <DefaultButton
                 text="Sign Up"
@@ -106,6 +106,13 @@ function Header({ siteTitle }) {
         }
         .navbar-light .navbar-nav .nav-link {
           color: black;
+        }
+        .navbar-toggler {
+          border: none;
+          outline: 0 !important;
+        }
+        .flex {
+          flex-direction: row !important;
         }
         .bgPrimaryButton {
           background-color: ${colors.primary};

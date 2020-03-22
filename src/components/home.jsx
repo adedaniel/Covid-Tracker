@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import NeedJobImageBackground from "./ImageExports/NeedJobimageBackground"
 import { colors } from "./styles/styles"
 import Typed from "react-typed"
-
+import Link from 'gatsby-plugin-transition-link'
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { DefaultButton } from "./button"
 import FutureImage from "./ImageExports/FutureImage"
 import LookingOutImage from "./ImageExports/LookingOutimage"
@@ -47,22 +48,32 @@ export default function Home() {
                       />
                     </span>
                   </h2>
-                  <Link to="/signup">
-                    <DefaultButton
-                      color="primary"
-                      padding="13px 15px"
-                      width="75%"
-                      font="larger"
-                    >
-                      Get Started
-                      <span className="mdi mdi-chevron-right"></span>
-                    </DefaultButton>
+                  <Link to='/signup'
+                  exit={{
+                    length: 1,
+                    zIndex: 2
+                  }}
+                  entry={{
+                    delay: 0.6,
+                    length: 1,
+                  }}
+                  >
+                <DefaultButton
+                color="primary"
+                padding="13px 15px"
+                width="75%"
+                font="larger"
+              >
+                Get Started
+                <span className="mdi mdi-chevron-right"></span>
+              </DefaultButton>
+          
                   </Link>
+               
+                
                 </div>
               </div>
-              <div className="col-md-6 bgSpace captionParent h90 p-0">
-               
-              </div>
+              <div className="col-md-6 bgSpace captionParent h90 p-0"></div>
               <div className="text-center w-100">
                 <div className="animated infinite bounce slow">
                   <i className="fa fa-angle-down angles" aria-hidden="true"></i>
@@ -77,8 +88,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-6 ">
-              
-                <FutureImage />
+              <FutureImage />
             </div>
             <div className="col-md-6 captionParent hImage">
               <div className="captionArea">
@@ -106,7 +116,12 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-6 captionParent hImage">
-              <div className="captionArea">
+              <div
+                className="captionArea"
+                data-sal="slide-right"
+                data-sal-delay="200"
+                data-sal-duration="400"
+              >
                 <h1 className="colorPrimary">We're looking out for you</h1>
                 <h5>
                   Our job is to save you lots of productive time spent on job
@@ -119,7 +134,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-6">
-            <LookingOutImage/>
+              <LookingOutImage />
             </div>
           </div>
         </div>
@@ -128,32 +143,53 @@ export default function Home() {
         <div className="container text-center">
           <h1 className="hoverEffect d-inline ">What We Do</h1>
           <div className="row mt-5">
-            <div className="col-sm-2">
-            <ListImage/>
+            <div
+              className="col-sm-2"
+              data-sal="slide-right"
+              data-sal-delay="100"
+              data-sal-duration="400"
+            >
+              <ListImage />
               <p> Get your job preferences</p>
             </div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
 
-            <div className="col-sm-2">
-            <SpreadImage/>
+            <div
+              className="col-sm-2"
+              data-sal="slide-right"
+              data-sal-delay="300"
+              data-sal-duration="400"
+            >
+              <SpreadImage />
               <p>Spread out</p>
             </div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
 
-            <div className="col-sm-2">
-            
-            <PersonalizedImage/>
-            <p> Personalize the findings to your taste</p></div>
+            <div
+              className="col-sm-2"
+              data-sal="slide-right"
+              data-sal-delay="600"
+              data-sal-duration="400"
+            >
+              <PersonalizedImage />
+              <p> Personalize the findings to your taste</p>
+            </div>
             <div className="col-sm-1 p-0">
               <div className="line"></div>
             </div>
-            <div className="col-sm-2">
-            <ResultsImage/>
-            <p> Dish out exactly what you need</p></div>
+            <div
+              className="col-sm-2"
+              data-sal="slide-right"
+              data-sal-delay="900"
+              data-sal-duration="400"
+            >
+              <ResultsImage />
+              <p> Dish out exactly what you need</p>
+            </div>
           </div>
         </div>
       </div>
@@ -161,36 +197,66 @@ export default function Home() {
         <div className="container">
           <h1>We're everywhere, everytime...</h1>
           <div className="row">
-            <div className="col-md-4 my-3">
-<RelevanceImage/>
+            <div
+              className="col-md-4 my-3"
+              data-sal="slide-up"
+              data-sal-delay="100"
+              data-sal-duration="600"
+            >
+              <RelevanceImage />
               <h4>Relevant</h4>
               <p>Engineered to always find jobs perfect for you</p>
             </div>
-            <div className="col-md-4 my-3">
-            <TimeImage/>
+            <div
+              className="col-md-4 my-3 "
+              data-sal="slide-up"
+              data-sal-delay="200"
+              data-sal-duration="600"
+            >
+              <TimeImage />
               <h4>Timely</h4>
               <p>
                 Real-time job updates so you can grab every opportunity on the
                 spot
               </p>
             </div>
-            <div className="col-md-4 my-3">
-            <NotificationImage/>
+            <div
+              className="col-md-4 my-3 "
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="600"
+            >
+              <NotificationImage />
               <h4>Informing</h4>
               <p>So you're always the first to get there</p>
             </div>
-            <div className="col-md-4 my-3">
-            <AccessibleImage/>
+            <div
+              className="col-md-4 my-3 "
+              data-sal="slide-up"
+              data-sal-delay="150"
+              data-sal-duration="600"
+            >
+              <AccessibleImage />
               <h4>Accessible</h4>
               <p>So you can use it anywhere and anytime</p>
             </div>
-            <div className="col-md-4 my-3">
-            <WatchingImage/>
+            <div
+              className="col-md-4 my-3 "
+              data-sal="slide-up"
+              data-sal-delay="200"
+              data-sal-duration="600"
+            >
+              <WatchingImage />
               <h4>Present</h4>
               <p>We're watching everywhere so you don't miss a thing</p>
             </div>
-            <div className="col-md-4 my-3">
-            <TestedImage/>
+            <div
+              className="col-md-4 my-3 "
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="600"
+            >
+              <TestedImage />
               <h4>Detailed</h4>
               <p>Designed from spacebar to spacebar, with you in mind</p>
             </div>
@@ -199,9 +265,14 @@ export default function Home() {
       </div>
       <div className="py-5">
         <div className="container">
-          <div className="row">
+          <div
+            className="row"
+            data-sal="fade"
+            data-sal-delay="200"
+            data-sal-duration="700"
+          >
             <div className="col-md-6">
-            <ChillImage/>
+              <ChillImage />
             </div>
             <div className="col-md-6 hImage captionParent">
               <div className="captionArea">
@@ -216,12 +287,24 @@ export default function Home() {
           </div>
           <div className="text-center my-5">
             <h2>
-              We <span className="hoverEffect"><strong> See Jobs</strong></span>
+              We{" "}
+              <span className="hoverEffect">
+                <strong> See Jobs</strong>
+              </span>
             </h2>
             <p className="mt-3">
-              and you should have clicked that button by now... <span role="img" aria-label="wink">😉</span> 
+              and you should have clicked that button by now...{" "}
+              <span role="img" aria-label="wink">
+                😉
+              </span>
             </p>
-            <Link to="/signup">
+            <Link to="/signup"   
+            exit={{
+                length: 1
+              }}
+              entry={{
+                delay: 0.6
+              }}>
               <DefaultButton
                 color="primary"
                 padding="8px 15px"
@@ -236,9 +319,9 @@ export default function Home() {
       </div>
 
       <style jsx>{`
-      .hImage{
-          height: 370px
-      }
+        .hImage {
+          height: 370px;
+        }
         .bigText {
           font-weight: 600;
           font-size: -webkit-xxx-large;
@@ -265,7 +348,7 @@ export default function Home() {
         }
 
         .h90 {
-          height: 93%;
+          height: 94%;
         }
         .vh100 {
           height: calc(100vh - 60px);
@@ -331,8 +414,8 @@ export default function Home() {
           .setResponse {
             background-color: white;
           }
-          .bgSpace{
-              display:none
+          .bgSpace {
+            display: none;
           }
         }
       `}</style>

@@ -15,7 +15,7 @@ module.exports = {
   },
   googleAnalyticsID: "UA-88875900-4",
   themeColor: "#65b77a",
-  backgroundColor: "#6b63ff",
+  backgroundColor: "#65b77a",
   social: {
     facebook: "appId",
     twitter: "@smakosh",
