@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-// import { Helmet } from "react-helmet"
+import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
 
@@ -27,22 +27,12 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        className="mt-5"
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          marginTop: 60,
         }}
       >
         <main>{children}</main>
-        <h1>hello</h1>
-
-        <footer>
-          © {new Date().getFullYear()}, {data.site.siteMetadata.title}. Built
-          with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer siteTitle={data.site.siteMetadata.title} />
       </div>
     </>
   )
