@@ -50,7 +50,7 @@ module.exports = {
         short_name: config.defaultTitle,
         start_url: `/`,
         background_color: config.themeColor,
-        theme_color: config.backgroundColor,
+        theme_color: config.themeColor,
         display: `minimal-ui`,
         icon: `src/images/see-jobs-logo.png`, // This path is relative to the root of the site.
       },

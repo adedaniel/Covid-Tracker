@@ -14,10 +14,10 @@ import BackgroundImage from "gatsby-background-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const NeedJobImageBackground = ({ children }) => {
+const DoctorImageBackground = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "agreement.png" }) {
+      placeholderImage: file(relativePath: { eq: "doctor.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -37,7 +37,8 @@ const NeedJobImageBackground = ({ children }) => {
         fadeIn={`soft`}
         style={{
           backgroundSize: "auto",
-          backgroundPosition: "right",
+          backgroundPosition: "center",
+          backgroundAttachment: 'fixed',
         }}
       >
         {children}
@@ -46,4 +47,4 @@ const NeedJobImageBackground = ({ children }) => {
   )
 }
 
-export default NeedJobImageBackground
+export default DoctorImageBackground

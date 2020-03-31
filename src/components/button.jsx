@@ -19,8 +19,8 @@ export const DefaultButton = ({
             box-shadow: none;
             border-radius: 25px;
             background-color: ${color === "secondary"
-              ? colors.secondary
-              : colors.primary};
+            ? colors.secondary
+            : colors.primary};
             color: white;
             width: ${width || "inherit"};
             padding: ${padding};
@@ -50,8 +50,8 @@ export const OutlineButton = ({
             border-radius: 25px;
             color: ${color === "secondary" ? colors.secondary : colors.primary};
             border-color: ${color === "secondary"
-              ? colors.secondary
-              : colors.primary};
+            ? colors.secondary
+            : colors.primary};
             padding: ${padding};
             font-size: ${font || "initial"};
             width: ${width || "inherit"};
@@ -60,8 +60,8 @@ export const OutlineButton = ({
           .bgOutlineButton:hover {
             color: ${colors.white};
             background-color: ${color === "secondary"
-              ? colors.secondary
-              : colors.primary};
+            ? colors.secondary
+            : colors.primary};
           }
         `}
       </style>
