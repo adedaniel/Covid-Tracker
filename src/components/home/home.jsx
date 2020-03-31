@@ -67,30 +67,8 @@ export default function Home() {
 
         <div className="py-5 bgLight">
           <div className="container">
-            <div className="row">
-              <div className="col-md-6 ">
-                <FutureImage />
-              </div>
-              <div className="col-md-6 captionParent hImage">
-                <div className="captionArea">
-                  <h1 className="colorPrimary">Okay, We Know...</h1>
-                  <h5>
-                    You need a Job.
-                  <br />
-                  Or maybe you need a job with a better pay... Or you're not
-                  really enjoying working at your present place... Or there's
-                  this really nice company you wanna work at...or...
-                  <br />
-                    <br />
-                  You get the point; We all want what's best for ourselves
-                  because we deserve it. But sometimes, we don't always seem to
-                  find the right places when we need them...
-                  <br />
-                    <strong> And that's why we're here!</strong>
-                  </h5>
-                </div>
-              </div>
-            </div>
+            <h1 className="colorPrimary">Trending Words</h1>
+            <h4>We have been able to fetch the most used words related to the virus based on their numbers of appearance on social media</h4>
           </div>
         </div>
         <div className="py-4 bgLight">
@@ -118,6 +96,7 @@ export default function Home() {
                 <LookingOutImage />
               </div>
             </div>
+
           </div>
         </div>
         <div className="py-5 ">

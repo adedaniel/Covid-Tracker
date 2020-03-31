@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
+import { colors } from "./styles/styles";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +34,29 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <Footer siteTitle={data.site.siteMetadata.title} />
+
       </div>
+      <style jsx global>{`
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: ${colors.offWhite};
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: ${colors.lightgrey};
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: ${colors.grey};
+      }
+      `}</style>
     </>
   )
 }

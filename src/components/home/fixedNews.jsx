@@ -1,29 +1,59 @@
 import React from 'react'
 import { colors } from '../styles/styles'
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 export default function FixedNews() {
-    return (
-        <>
-            <h4 className="mb-3">
-                <span className="hoverEffect">
-                    LATEST NEWS
-                            </span>
-            </h4>
-            <Link to='#' className='text-dark text-decoration-none'>
-                <div className="bg-white newsCard py-2 px-2 my-2">
-                    <h4 className='m-0'>Ogun State calls State of Emergency</h4>
-                    <small className='m-0 textGrey'>14 hours ago</small>
-                    <h6>
-                        {'Following the occurence of events, the Ogun State Government has officially declared a state of emergency '.replace(/^(.{75}[^\s]*).*/, "$1")}...{' '}
-                        <span><a href="#" className='newsLink text-decoration-none'>Read More</a></span>
-                    </h6>
+  const data = useStaticQuery(graphql`
+    query {
+      allNews {
+    edges {
+      node {
+        id
+        link
+        published
+        summary
+        title
+      }
+    }
+  }
+    }
+  `)
+  const newsData = data.allNews.edges
 
-                </div>
-            </Link>
 
-            <a href="#" className='textDark text-decoration-none mt-3'>  <h4 className='text-center seeMore hoverEffect'>See More</h4></a>
-            <style jsx>{`
+  return (
+    <>
+      <h4 className="mb-3">
+        <span className="hoverEffect">
+          LATEST NEWS
+       </span>
+      </h4>
+      <div className='vh90'>
+        {newsData.slice(0, 5).map(eachNews => (
+          <a target='_blank' key={eachNews.node.id} href={eachNews.node.link} className='text-dark text-decoration-none'>
+            <div className="bg-white newsCard py-2 px-2 my-2">
+              <h5 className='m-0'>{eachNews.node.title}</h5>
+              <small className='m-0 textGrey'>{eachNews.node.published}</small>
+              <h6>
+                {eachNews.node.summary.replace(/^(.{75}[^\s]*).*/, "$1")}...{' '}
+                <span><a target='_blank' href={eachNews.node.link} className='newsLink text-decoration-none'>Read More</a></span>
+              </h6>
+
+            </div>
+          </a>
+        ))}
+      </div>
+      <div className='vh10 mt-1'>
+
+
+        <Link to="/news" className='textDark text-decoration-none mt-3'>  <h4 className='text-center seeMore hoverEffect'>See More</h4></Link>
+      </div>
+      <style jsx>{`
+      .vh90{
+        height: 73vh;
+        overflow-y: scroll;
+      }
             .seeMore{
                 width: fit-content;
                 margin: 0 auto
@@ -58,6 +88,8 @@ export default function FixedNews() {
           }
           
         `}</style>
-        </>
-    )
+    </>
+  )
 }
+
+
