@@ -13,27 +13,23 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const AccessibleImage = () => {
+const WordCloudImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "accessible.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+      placeholderImage:  wordCloud {
+    link
+  }
     }
   `)
 
   return (
     <Img
       objectFit="cover"
-      className="w-75"
-      style={{ margin: "0 auto" }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
+      className=""
+      // style={{ margin: "0 auto" }}
+      fluid={data.wordCloud.link}
     />
   )
 }
 
-export default AccessibleImage
+export default WordCloudImage

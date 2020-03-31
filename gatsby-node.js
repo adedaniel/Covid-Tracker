@@ -13,6 +13,7 @@ exports.sourceNodes = async ({ actions }) => {
     // fetch raw data from the Students api
     const fetchNews = () =>
         axios.get(`https://coronadatasource.herokuapp.com/api/news`)
+
     // await for results
     const res = await fetchNews()
 
@@ -51,8 +52,50 @@ exports.sourceNodes = async ({ actions }) => {
         createNode(newsNode)
     })
 
+
+    const fetchWordCloud = () =>
+        axios.get(`https://coronadatasource.herokuapp.com/api/wordcloudimage`)
+
+    // await for results
+    const wordRes = await fetchWordCloud()
+
+    // map into these results and create nodes
+
+    // Create your node object
+    const imageNode = {
+        // Required fields
+        id: `${0}`,
+        parent: `__SOURCE__`,
+        internal: {
+            type: `WordCloud`, // name of the graphQL query --> allStudents {}
+            // contentDigest will be added just after
+            // but it is required
+        },
+        children: [],
+
+        // Other fields that you want to query with graphQl
+        link: wordRes.data.data
+
+
+        // etc...
+    }
+
+    // Get content digest of node. (Required field)
+    const contentDigest = crypto
+        .createHash(`md5`)
+        .update(JSON.stringify(imageNode))
+        .digest(`hex`)
+    // add it to studentNode
+    imageNode.internal.contentDigest = contentDigest
+
+    // Create node with the gatsby createNode() API
+    createNode(imageNode)
+
+
     return
 }
+
+
 // You can delete this file if you're not using it
 
 // const path = require("path")

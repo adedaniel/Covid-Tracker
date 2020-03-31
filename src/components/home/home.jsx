@@ -5,7 +5,7 @@ import { colors } from "../styles/styles";
 import Typed from "react-typed";
 import Link from "gatsby-plugin-transition-link";
 // import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { DefaultButton } from "../button";
+import { DefaultButton, OutlineButton } from "../button";
 import FutureImage from "../ImageExports/FutureImage";
 import LookingOutImage from "../ImageExports/LookingOutimage";
 import ListImage from "../ImageExports/ListImage";
@@ -15,11 +15,12 @@ import ResultsImage from "../ImageExports/ResultsImage";
 import RelevanceImage from "../ImageExports/RelevanceImage";
 import NotificationImage from "../ImageExports/NotificationImage";
 import TimeImage from "../ImageExports/TimeImage";
-import AccessibleImage from "../ImageExports/AccessibleImage";
+import AccessibleImage from "../ImageExports/WordCloudImage";
 import WatchingImage from "../ImageExports/WatchingImage";
 import TestedImage from "../ImageExports/TestedImage";
 import ChillImage from "../ImageExports/ChillImage";
 import FixedNews from "./fixedNews";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
           <div className="setResponse h90">
             <div className="container">
               <div className="row vh100">
-                <div className="col-md-6 captionParent h90">
+                <div className="col-md-7 captionParent h90">
                   <div className="captionArea responsiveCenter">
                     <h1>
                       <span className="hoverEffect">
@@ -48,13 +49,14 @@ export default function Home() {
                       cases from Wuhan, China. By the end of February 2020, several were experiencing sustained
                       local transmission of coronavirus disease.
                   <br /><br />
-                   We have been able to collate realtime data
+                   Here, you'll be able to get realtime data
                     from different sources concerning the virus across different states in Nigeria and countries around the World.
+
 
                   </h5>
                   </div>
                 </div>
-                <div className="col-md-6 bgSpace captionParent h90 p-0" />
+                <div className="col-md-5 bgSpace captionParent h90 p-0" />
                 <div className="text-center w-100">
                   <div className="animated infinite bounce slow">
                     <i className="fa fa-angle-down angles" aria-hidden="true" />
@@ -65,218 +67,45 @@ export default function Home() {
           </div>
         </DoctorImageBackground>
 
-        <div className="py-5 bgLight">
-          <div className="container">
-            <h1 className="colorPrimary">Trending Words</h1>
-            <h4>We have been able to fetch the most used words related to the virus based on their numbers of appearance on social media</h4>
-          </div>
-        </div>
-        <div className="py-4 bgLight">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6 captionParent hImage">
-                <div
-                  className="captionArea"
-                  data-sal="slide-right"
-                  data-sal-delay="200"
-                  data-sal-duration="400"
-                >
-                  <h1 className="colorPrimary">We're looking out for you</h1>
-                  <h5>
-                    Our job is to save you lots of productive time spent on job
-                    seeking. In other words,
-                  <br />
-                    <br />
-                  We'll do the <span className="hoverEffect">searching</span>,
-                  you'll do the <span className="hoverEffect">choosing</span>
-                  </h5>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <LookingOutImage />
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div className="py-5 ">
-          <div className="container text-center">
-            <h1 className="hoverEffect d-inline ">What We Do</h1>
-            <div className="row mt-5">
-              <div
-                className="col-sm-2"
-                data-sal="slide-right"
-                data-sal-delay="100"
-                data-sal-duration="400"
-              >
-                <ListImage />
-                <p> Get your job preferences</p>
-              </div>
-              <div className="col-sm-1 p-0">
-                <div className="line" />
-              </div>
-
-              <div
-                className="col-sm-2"
-                data-sal="slide-right"
-                data-sal-delay="300"
-                data-sal-duration="400"
-              >
-                <SpreadImage />
-                <p>Spread out</p>
-              </div>
-              <div className="col-sm-1 p-0">
-                <div className="line" />
-              </div>
-
-              <div
-                className="col-sm-2"
-                data-sal="slide-right"
-                data-sal-delay="600"
-                data-sal-duration="400"
-              >
-                <PersonalizedImage />
-                <p> Personalize the findings to your taste</p>
-              </div>
-              <div className="col-sm-1 p-0">
-                <div className="line" />
-              </div>
-              <div
-                className="col-sm-2"
-                data-sal="slide-right"
-                data-sal-delay="900"
-                data-sal-duration="400"
-              >
-                <ResultsImage />
-                <p> Dish out exactly what you need</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="py-5 bgPrimary text-white text-center">
-          <div className="container">
-            <h1>We're everywhere, everytime...</h1>
-            <div className="row">
-              <div
-                className="col-md-4 my-3"
-                data-sal="slide-up"
-                data-sal-delay="100"
-                data-sal-duration="600"
-              >
-                <RelevanceImage />
-                <h4>Relevant</h4>
-                <p>Engineered to always find jobs perfect for you</p>
-              </div>
-              <div
-                className="col-md-4 my-3 "
-                data-sal="slide-up"
-                data-sal-delay="200"
-                data-sal-duration="600"
-              >
-                <TimeImage />
-                <h4>Timely</h4>
-                <p>
-                  Real-time job updates so you can grab every opportunity on the
-                  spot
-              </p>
-              </div>
-              <div
-                className="col-md-4 my-3 "
-                data-sal="slide-up"
-                data-sal-delay="300"
-                data-sal-duration="600"
-              >
-                <NotificationImage />
-                <h4>Informing</h4>
-                <p>So you're always the first to get there</p>
-              </div>
-              <div
-                className="col-md-4 my-3 "
-                data-sal="slide-up"
-                data-sal-delay="150"
-                data-sal-duration="600"
-              >
-                <AccessibleImage />
-                <h4>Accessible</h4>
-                <p>So you can use it anywhere and anytime</p>
-              </div>
-              <div
-                className="col-md-4 my-3 "
-                data-sal="slide-up"
-                data-sal-delay="200"
-                data-sal-duration="600"
-              >
-                <WatchingImage />
-                <h4>Present</h4>
-                <p>We're watching everywhere so you don't miss a thing</p>
-              </div>
-              <div
-                className="col-md-4 my-3 "
-                data-sal="slide-up"
-                data-sal-delay="300"
-                data-sal-duration="600"
-              >
-                <TestedImage />
-                <h4>Detailed</h4>
-                <p>Designed from spacebar to spacebar, with you in mind</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="py-5">
           <div className="container">
-            <div
-              className="row"
-              data-sal="fade"
-              data-sal-delay="200"
-              data-sal-duration="700"
-            >
-              <div className="col-md-6">
-                <ChillImage />
-              </div>
-              <div className="col-md-6 hImage captionParent">
-                <div className="captionArea">
-                  <h1 className="colorPrimary">See?</h1>
-                  <h5>
-                    So why don't you sit back, sip some coffee, go on that date or
-                    play that guitar while we dish the best job offers to your
-                    table!
-                </h5>
-                </div>
-              </div>
-            </div>
-            <div className="text-center my-5">
-              <h2>
-                We{" "}
-                <span className="hoverEffect">
-                  <strong> See Jobs</strong>
-                </span>
-              </h2>
-              <p className="mt-3">
-                and you should have clicked that button by now...{" "}
-                <span role="img" aria-label="wink">
-                  😉
-              </span>
-              </p>
-              <Link
-                to="/signup"
-                exit={{
-                  length: 1
-                }}
-                entry={{
-                  delay: 0.6
-                }}
+            <h1 className="colorPrimary">Trending Words</h1>
+            <h5>We have been able to fetch the most used words related to the virus based on their numbers of appearance on social media.<br />
+            Zoom in and take a look</h5>
+            <div className=" mt-5">
+              <TransformWrapper
+                defaultScale={1}
+                defaultPositionX={200}
+                defaultPositionY={100}
               >
-                <DefaultButton
-                  color="primary"
-                  padding="8px 15px"
-                  width="50%"
-                  font="larger"
-                >
-                  Get Started
-              </DefaultButton>
-              </Link>
+                {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                  <>
+                    <div className="tools">
+                      <div className="reset float-right">
+                        <DefaultButton onClick={resetTransform} padding='4px 25px' borderRadius='0' font='25px'>X</DefaultButton>
+                      </div>
+
+                      <div className="zoom">
+
+                        <DefaultButton onClick={zoomIn} padding='4px 25px' borderRadius='0' font='25px'>+</DefaultButton>
+                        &nbsp;&nbsp;
+                        <OutlineButton onClick={zoomOut} padding='4px 25px' borderRadius='0' font='25px'>-</OutlineButton>
+                      </div>
+
+                    </div>
+                    <div className='imageBorder'>
+                      <TransformComponent>
+                        <div className="wordcloud">
+                          <img width='100%' height='100%' src="http://coronadatasource.herokuapp.com/static/corona.png" alt="" />
+                        </div>
+                      </TransformComponent>
+                    </div>
+                  </>
+                )}
+              </TransformWrapper>
+
             </div>
+
           </div>
         </div>
 
@@ -287,10 +116,22 @@ export default function Home() {
 
       <style jsx>
         {`
+        .imageBorder{
+          border-width: 1px;
+          border-color: ${colors.lightgrey};
+          border-style: solid;
+        }
+        .wordcloud{
+          width: 100%;
+          height: 650px
+        }
         .leftBorder{
           border-left-width: 1px;
           border-left-color: ${colors.lightgrey};
           border-left-style: solid;
+          border-top-width: 5px;
+          border-top-color: ${colors.lightgrey};
+          border-top-style: solid;
         }
         .fixed-news{
           width: 25%;

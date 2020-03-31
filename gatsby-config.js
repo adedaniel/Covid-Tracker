@@ -53,6 +53,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'News',
+        imagePath: 'http://coronadatasource.herokuapp.com/static/corona.png',
+        name: 'theNewImageField',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.defaultTitle,
