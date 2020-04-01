@@ -10,4 +10,5 @@ import "popper.js/dist/popper.min"
 import "bootstrap/dist/js/bootstrap.min.js"
 import "font-awesome/css/font-awesome.min.css"
 import "animate.css"
+export const onServiceWorkerUpdateReady = () => window.location.reload();
 // You can delete this file if you're not using it

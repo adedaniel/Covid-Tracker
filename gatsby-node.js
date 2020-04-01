@@ -22,7 +22,7 @@ exports.sourceNodes = async ({ actions }) => {
         // Create your node object
         const newsNode = {
             // Required fields
-            id: `${i}`,
+            id: `${i - 1}`,
             parent: `__SOURCE__`,
             internal: {
                 type: `News`, // name of the graphQL query --> allStudents {}
@@ -32,6 +32,7 @@ exports.sourceNodes = async ({ actions }) => {
             children: [],
 
             // Other fields that you want to query with graphQl
+
             link: newsItem.link,
             published: newsItem.published,
             title: newsItem.title,
@@ -51,6 +52,13 @@ exports.sourceNodes = async ({ actions }) => {
         // Create node with the gatsby createNode() API
         createNode(newsNode)
     })
+
+
+
+
+
+
+
 
 
     const fetchWordCloud = () =>
@@ -81,7 +89,7 @@ exports.sourceNodes = async ({ actions }) => {
     }
 
     // Get content digest of node. (Required field)
-    const contentDigest = crypto
+    let contentDigest = crypto
         .createHash(`md5`)
         .update(JSON.stringify(imageNode))
         .digest(`hex`)
@@ -90,6 +98,59 @@ exports.sourceNodes = async ({ actions }) => {
 
     // Create node with the gatsby createNode() API
     createNode(imageNode)
+
+
+
+
+
+
+
+
+
+    const fetchNcdc = () =>
+        axios.get(`https://coronadatasource.herokuapp.com/api/ncdc`)
+
+    // await for results
+    const ncdcRes = await fetchNcdc()
+
+    // map into these results and create nodes
+
+
+
+    // Create your node object
+    const ncdcNode = {
+        // Required fields
+        id: `${1}`,
+        parent: `__SOURCE__`,
+        internal: {
+            type: `Ncdc`, // name of the graphQL query --> allStudents {}
+            // contentDigest will be added just after
+            // but it is required
+        },
+        children: [],
+
+        // Other fields that you want to query with graphQl
+        ncdc: JSON.parse(ncdcRes.data.data)
+
+
+        // etc...
+    }
+
+    // Get content digest of node. (Required field)
+    contentDigest = crypto
+        .createHash(`md5`)
+        .update(JSON.stringify(ncdcNode))
+        .digest(`hex`)
+    // add it to studentNode
+    ncdcNode.internal.contentDigest = contentDigest
+
+    // Create node with the gatsby createNode() API
+    createNode(ncdcNode)
+
+
+
+
+
 
 
     return

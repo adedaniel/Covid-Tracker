@@ -2,25 +2,27 @@ import React from "react";
 // import { Link } from "gatsby"
 import DoctorImageBackground from "../ImageExports/DoctorImageBackground";
 import { colors } from "../styles/styles";
-import Typed from "react-typed";
-import Link from "gatsby-plugin-transition-link";
+// import Typed from "react-typed";
+// import Link from "gatsby-plugin-transition-link";
 // import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { DefaultButton, OutlineButton } from "../button";
-import FutureImage from "../ImageExports/FutureImage";
-import LookingOutImage from "../ImageExports/LookingOutimage";
-import ListImage from "../ImageExports/ListImage";
-import SpreadImage from "../ImageExports/SpreadImage";
-import PersonalizedImage from "../ImageExports/PersonalizedImage";
-import ResultsImage from "../ImageExports/ResultsImage";
-import RelevanceImage from "../ImageExports/RelevanceImage";
-import NotificationImage from "../ImageExports/NotificationImage";
-import TimeImage from "../ImageExports/TimeImage";
-import AccessibleImage from "../ImageExports/WordCloudImage";
-import WatchingImage from "../ImageExports/WatchingImage";
-import TestedImage from "../ImageExports/TestedImage";
-import ChillImage from "../ImageExports/ChillImage";
+// import FutureImage from "../ImageExports/FutureImage";
+// import LookingOutImage from "../ImageExports/LookingOutimage";
+// import ListImage from "../ImageExports/ListImage";
+// import SpreadImage from "../ImageExports/SpreadImage";
+// import PersonalizedImage from "../ImageExports/PersonalizedImage";
+// import ResultsImage from "../ImageExports/ResultsImage";
+// import RelevanceImage from "../ImageExports/RelevanceImage";
+// import NotificationImage from "../ImageExports/NotificationImage";
+// import TimeImage from "../ImageExports/TimeImage";
+// import AccessibleImage from "../ImageExports/WordCloudImage";
+// import WatchingImage from "../ImageExports/WatchingImage";
+// import TestedImage from "../ImageExports/TestedImage";
+// import ChillImage from "../ImageExports/ChillImage";
 import FixedNews from "./fixedNews";
+
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import TopCasesLocal from "./TopCasesLocal";
 
 export default function Home() {
   return (
@@ -42,13 +44,13 @@ export default function Home() {
                       Severe Acute Respiratory Syndrome Coronavirus-2 (SARS-CoV-2)
                       is the name given to the 2019 novel coronavirus. COVID-19 is
                       the name given to the disease associated with the virus.
-<br />
+                      <br />
                       <br />
                       In December 2019, It was detected in
                       three patients with pneumonia connected to the cluster of acute respiratory illness
                       cases from Wuhan, China. By the end of February 2020, several were experiencing sustained
                       local transmission of coronavirus disease.
-                  <br /><br />
+                      <br /><br />
                    Here, you'll be able to get realtime data
                     from different sources concerning the virus across different states in Nigeria and countries around the World.
 
@@ -109,6 +111,26 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="py-4 bgLight">
+          <div className="container">
+            <h1 className="colorPrimary">Top Cases</h1>
+            <h3 className='mt-3'>Nigeria</h3>
+            <div className=" mt-2">
+              <div className="container">
+                <div className="row">
+                  <TopCasesLocal />
+                  <div className="col-sm-2">hello</div>
+                  <div className="col-sm-2">hello</div>
+                  <div className="col-sm-2">hello</div>
+                  <div className="col-sm-2">hello</div>
+                  <div className="col-sm-2">hello</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
       <div className="fixed-news leftBorder py-4 px-3">
         <FixedNews />
@@ -116,6 +138,17 @@ export default function Home() {
 
       <style jsx>
         {`
+        .caseNumber{
+          font-size: 4.5rem
+        }
+        .topCase{
+          background-color: ${colors.white};
+          padding: 20px 5px;
+          border-radius: 8px;
+          text-align: center;
+          box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04),
+          0 1px 6px rgba(0, 0, 0, 0.04);
+        }
         .imageBorder{
           border-width: 1px;
           border-color: ${colors.lightgrey};
@@ -141,6 +174,7 @@ export default function Home() {
           background-color: ${colors.offWhite}
 
         }
+     
         .scrollable{
           width: 75%;
           display: inline-block
@@ -243,7 +277,28 @@ export default function Home() {
             }
           }
           @media (max-width: 767px) {
-          
+            .fixed-news{
+             display: none
+    
+            }
+            .fixed-news {
+              width: 100%;
+              display: block;
+              position: initial;
+              height: inherit;
+              background-color: #f9f9f9;
+          }
+          .leftBorder{
+     
+            border-top-width: 1px;
+            
+          }
+            .wordcloud {
+              height: inherit;
+          }
+            .scrollable{
+              width: 100%
+            }
             .bgSpace {
               display: none;
             }

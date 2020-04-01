@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { colors } from "./styles/styles";
-import { DefaultButton, OutlineButton } from "./button";
-import LogoImage from "./ImageExports/LogoImage";
+// import { DefaultButton, OutlineButton } from "./button";
+// import LogoImage from "./ImageExports/LogoImage";
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 function Header({ siteTitle }) {
   const [active, setActive] = useState(1)
@@ -23,12 +23,10 @@ function Header({ siteTitle }) {
       className={`navbar navbar-expand-md effect-main ${topClass} navbar-light bg-white fixed-top`}
     >
       <div className="container container-s">
-        <a className="navbar-brand" href="#">
-          <h2 className="m-0 logo">
+        <h2 className="m-0 logo">
 
-            {siteTitle}
-          </h2>
-        </a>
+          {siteTitle}
+        </h2>
         <button
           className="navbar-toggler"
           type="button"
@@ -48,7 +46,7 @@ function Header({ siteTitle }) {
               }`} onClick={() => {
                 setActive(1)
               }}>
-              <a className="nav-link js-scroll-trigger" href="#">
+              <a className="nav-link js-scroll-trigger" href="#home">
                 Home
           </a>
             </li>

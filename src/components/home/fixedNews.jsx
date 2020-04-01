@@ -31,13 +31,13 @@ export default function FixedNews() {
       </h4>
       <div className='vh90'>
         {newsData.slice(0, 5).map(eachNews => (
-          <a target='_blank' key={eachNews.node.id} href={eachNews.node.link} className='text-dark text-decoration-none'>
+          <a target='_blank' rel="noopener noreferrer" key={eachNews.node.id} href={eachNews.node.link} className='text-dark text-decoration-none'>
             <div className="bg-white newsCard py-2 px-2 my-2">
               <h5 className='m-0'>{eachNews.node.title}</h5>
               <small className='m-0 textGrey'>{eachNews.node.published}</small>
               <h6>
                 {eachNews.node.summary.replace(/^(.{75}[^\s]*).*/, "$1")}...{' '}
-                <span><a target='_blank' href={eachNews.node.link} className='newsLink text-decoration-none'>Read More</a></span>
+                <span><a target='_blank' rel="noopener noreferrer" href={eachNews.node.link} className='newsLink text-decoration-none'>Read More</a></span>
               </h6>
 
             </div>

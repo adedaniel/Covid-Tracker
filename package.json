@@ -47,13 +47,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": " set ENABLE_GATSBY_REFRESH_ENDPOINT=true && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "set ENABLE_GATSBY_REFRESH_ENDPOINT=true && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "repository": {
     "type": "git",

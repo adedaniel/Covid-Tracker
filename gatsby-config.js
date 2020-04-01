@@ -29,7 +29,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Raleway", "sans-serif"],
+          families: ["Jaldi", "sans-serif"],
         },
       },
     },
