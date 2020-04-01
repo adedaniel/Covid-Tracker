@@ -18,6 +18,7 @@
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.42",
     "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-remote-images": "^2.1.0",
     "gatsby-plugin-scroll-reveal": "0.0.6",
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-plugin-styled-jsx": "^3.1.21",
@@ -35,6 +36,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typed": "^1.2.0",
+    "react-zoom-pan-pinch": "^1.6.1",
     "styled-jsx": "^3.2.5"
   },
   "devDependencies": {
@@ -45,13 +47,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": " set ENABLE_GATSBY_REFRESH_ENDPOINT=true && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "set ENABLE_GATSBY_REFRESH_ENDPOINT=true && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "refresh": "curl -X POST http://localhost:8000/__refresh"
   },
   "repository": {
     "type": "git",

@@ -29,7 +29,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Raleway", "sans-serif"],
+          families: ["Jaldi", "sans-serif"],
         },
       },
     },
@@ -52,6 +52,14 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'News',
+        imagePath: 'http://coronadatasource.herokuapp.com/static/corona.png',
+        name: 'theNewImageField',
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

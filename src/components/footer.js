@@ -9,7 +9,7 @@ export default function Footer({ siteTitle }) {
           <div className="col-md-3 fitContent">
             <ul className="p-0">
               <li className="listItem">
-                <h2 className="text-white my-3">See Jobs</h2>
+                <h2 className="text-white my-3">{siteTitle}</h2>
               </li>
               <li className="listItem">
                 <a href="#" className="itemLink">
